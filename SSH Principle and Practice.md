@@ -71,6 +71,9 @@ $ ssh-copy-id user@host
 ```
 $ ssh user@host 'mkdir -p .ssh && cat >> .ssh/authorized_keys' < ~/.ssh/id_rsa.pub
 ```
+依次分解来看
+* `ssh user@host`表示登录远程主机；
+* `'mkdir -p .ssh && cat >> .ssh/authorized_keys' < ~/.ssh/id_rsa.pub`是登录远程主机后要运行的命令
 通常完成这个步骤后，你再登录远程主机，就不需要输入密码了。
 3. 如果还是不行，就打开远程主机的`/etc/ssh/sshd_config`这个文件，检查下面几行前面的#注释是否取掉
 ```
